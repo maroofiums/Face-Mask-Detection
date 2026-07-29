@@ -13,6 +13,10 @@ BATCH_SIZE = 32
 EPOCHS = 10
 LEARNING_RATE = 0.001
 
+CLASS_NAMES = [
+    "with_mask",
+    "without_mask"
+]
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
