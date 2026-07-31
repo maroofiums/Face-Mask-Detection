@@ -11,7 +11,7 @@ from sklearn.metrics import (
 from config import DEVICE, MODEL_PATH
 from model import create_model
 from dataset import get_dataloaders
-from utils import load_model
+from utils import load_model, save_model
 
 
 def evaluate():
