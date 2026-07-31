@@ -174,9 +174,9 @@ OpenCV-->>Screen: Draw Bounding Box
 Clone the repository.
 
 ```bash
-git clone https://github.com/yourusername/FaceMaskDetection.git
+git clone https://github.com/maroofiums/Face-Mask-Detection.git
 
-cd FaceMaskDetection
+cd Face-Mask-Detection
 ```
 
 Create a virtual environment.
