@@ -46,13 +46,14 @@ H -->|Class 1| J[Without Mask]
 # Project Structure
 
 ```text
-FaceMaskDetection/
+Face-Mask-Detection/
 │
 ├── dataset/
 │   ├── with_mask/
 │   └── without_mask/
 │
 ├── models/
+|   ├── haarcascade_frontalface_default.xml
 │   └── best_model.pth
 │
 ├── outputs/
