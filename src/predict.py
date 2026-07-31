@@ -4,16 +4,16 @@ from PIL import Image
 from config import DEVICE, MODEL_PATH, CLASS_NAMES
 from model import create_model
 from transforms import test_transforms
+from utils import load_model
+
 
 def predict(image_path):
     model = create_model().to(DEVICE)
-    model.load_state_dict(
-        model.load(
-            MODEL_PATH,
-            map_location=DEVICE
-        )
+    model = load_model(
+        model,
+        MODEL_PATH,
+        DEVICE
     )
-    model.eval()
 
     image = Image.open(image_path).convert("RGB")
     image = test_transformsa(image)

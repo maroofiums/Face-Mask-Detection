@@ -11,17 +11,18 @@ from sklearn.metrics import (
 from config import DEVICE, MODEL_PATH
 from model import create_model
 from dataset import get_dataloaders
+from utils import load_model
+
 
 def evaluate():
 
     _, val_loader = get_dataloaders()
 
     model = create_model().to(DEVICE)
-    model.load_state_dict(
-        torch.load(
-            MODEL_PATH,
-            map_location=DEVICE
-        )
+    model = load_model(
+        model,
+        MODEL_PATH,
+        DEVICE
     )
 
     all_labels = []

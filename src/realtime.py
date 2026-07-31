@@ -5,6 +5,7 @@ from PIL import Image
 from config import DEVICE, MODEL_PATH, FACE_DETECTION_MODEL
 from model import create_model
 from transforms import test_transforms
+from utils import load_model
 
 face_detector = cv2.CascadeClassifier(
     FACE_DETECTION_MODEL
@@ -16,13 +17,11 @@ CLASS_NAMES = [
 ]
 
 model = create_model().to(DEVICE)
-model.load_state_dict(
-    torch.load(
-        MODEL_PATH,
-        map_location=DEVICE
-    )
+model = load_model(
+    model,
+    MODEL_PATH,
+    DEVICE
 )
-model.eval()
 
 camera = cv2.VideoCapture(0)
 
