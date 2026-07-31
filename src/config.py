@@ -23,5 +23,6 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 MODEL_DIR = "models"
 MODEL_PATH = os.path.join(MODEL_DIR, "best_model.pth")
+FACE_DETECTION_MODEL = os.path.join(MODEL_DIR, "haarcascade_frontalface_default.xml")
 
 os.makedirs(MODEL_DIR, exist_ok=True)
